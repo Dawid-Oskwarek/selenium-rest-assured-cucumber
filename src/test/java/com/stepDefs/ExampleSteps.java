@@ -5,28 +5,32 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.json.JSONObject;
 import org.testng.Assert;
-
 import com.ApiUtil;
-
 import io.cucumber.java.en.And;
 
 
 public class ExampleSteps {
 
+    private String body;
+
     @Given("a json request is set")
     public void jsonRequestIsSet() {
 
     JSONObject json = new JSONObject();
-    json.put("Key", "Value");
+    json.put("name", "morpheus");
+    json.put("job", "leader");
+
+    this.body = json.toString();
+
     }
 
     @When("a POST request is sent")
-    public void postRequest() {
+    public void postRequest() throws Exception {
 
-        //String url = "localhost";
+        String url = "https://reqres.in/api/users";
 
         System.out.println("\n" + "Response Body: " + "\n");
-        //ApiUtil.runPOST(url, requestBody);
+        ApiUtil.runPOST(url, this.body);
  
     }
 
@@ -39,6 +43,10 @@ public class ExampleSteps {
 
     @And("the response is valid")
     public void responseIsValid() {
- 
+
+        JSONObject obj = new JSONObject(ApiUtil.getResponse().asString());
+        String name = obj.getString("name");
+        Assert.assertEquals(name, "morpheus");
+
     }
 }
