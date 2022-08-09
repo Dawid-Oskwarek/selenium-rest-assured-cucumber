@@ -21,6 +21,7 @@ public class ExampleSteps {
     json.put("job", "leader");
 
     this.body = json.toString();
+    System.out.println("\n" + "Request Body: " + "\n" + this.body);
 
     }
 
@@ -34,7 +35,7 @@ public class ExampleSteps {
  
     }
 
-    @Then("the status code is (.*)")
+    @Then("the status code is {int}")
     public void verifyStatusCode(int expectedStatusCode) {
 
         int statusCode = ApiUtil.getResponse().statusCode();
