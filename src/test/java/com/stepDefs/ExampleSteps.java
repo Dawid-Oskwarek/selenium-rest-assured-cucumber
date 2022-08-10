@@ -29,8 +29,6 @@ public class ExampleSteps {
     public void postRequest() throws Exception {
 
         String url = "https://reqres.in/api/users";
-
-        System.out.println("\n" + "Response Body: " + "\n");
         ApiUtil.runPOST(url, this.body);
  
     }
