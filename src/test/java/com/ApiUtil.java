@@ -16,12 +16,13 @@ public class ApiUtil {
         .body(requestBody)
         .when()
         .post(url);
-        
+
+        System.out.println("\n" + "Response Body: ");
         System.out.println("STATUS: " + response.statusCode());
+        System.out.println(response.asString());
     }
 
     public static Response getResponse() {
-        System.out.println(response.asString());
         return response;
     }
 }
