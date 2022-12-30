@@ -3,7 +3,7 @@
 <suite name="Cucumber Suite" >
 <test name="Api Test" >
 <classes>
-    <class name="com.runner.CucumberRunnerTest"/>
+    <class name="com.api.runner.ApiRunner"/>
 </classes> 
 </test>
 </suite>
