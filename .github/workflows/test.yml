@@ -6,6 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Set executable permission on chromedriver
+        run: chmod +x src/test/resources/ui/drivers/chromedriver
       - name: Test
         shell: bash
         run: mvn clean test

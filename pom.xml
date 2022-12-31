@@ -27,7 +27,7 @@
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-java</artifactId>
-      <version>3.141.59</version>
+      <version>4.7.1</version>
     </dependency>
      
     <dependency>
@@ -65,8 +65,9 @@
         <version>3.0.0-M7</version>
         <configuration>
           <includes>
-            <include>**/CucumberRunnerTest*.java</include>
-        </includes>
+            <include>com.api.runner.ApiRunner</include>
+            <include>com.ui.runner.UiRunner</include>
+          </includes>
         </configuration>
       </plugin>               
       </plugins>
