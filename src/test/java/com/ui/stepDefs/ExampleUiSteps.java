@@ -15,7 +15,7 @@ public class ExampleUiSteps {
     private SuccessPage successPage;
 
     public ExampleUiSteps() {
-        driver = UiRunner.driver;
+        this.driver = UiRunner.driver;
     }
 
     @Given("I access the website")
