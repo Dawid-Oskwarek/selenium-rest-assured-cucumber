@@ -20,7 +20,7 @@ public class ExampleUiSteps {
 
     @Before
     public void setup() {
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/ui/drivers/chromedriverwindows");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/ui/drivers/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
         options.addArguments("--disable-web-security");
