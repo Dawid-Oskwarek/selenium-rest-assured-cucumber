@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
-@CucumberOptions(tags = "@ui", features = "src/test/resources/ui/features", glue = { "com.ui.stepDefs" })
+@CucumberOptions(tags = "@ui", features = "src/test/resources/ui/features", glue = "com.ui.stepDefs")
 
 
 public class UiRunner extends AbstractTestNGCucumberTests {
