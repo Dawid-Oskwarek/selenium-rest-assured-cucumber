@@ -8,7 +8,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: browser-actions/setup-chrome@latest
         with:
-          chrome-version: 108.0.5359.71
+          chrome-version: 108
       - name: Set executable permission on chromedriver
         run: chmod +x src/test/resources/ui/drivers/chromedriver
       - name: Test
