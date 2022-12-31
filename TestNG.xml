@@ -4,6 +4,11 @@
 <test name="Api Test" >
 <classes>
     <class name="com.api.runner.ApiRunner"/>
-</classes> 
+</classes>
+</test>
+<test name="Ui Test" >
+<classes>
+    <class name="com.ui.runner.UiRunner"/>
+</classes>
 </test>
 </suite>

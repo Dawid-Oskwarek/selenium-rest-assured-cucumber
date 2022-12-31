@@ -4,6 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import com.ui.support.pages.HtmlElementsPage;
+import com.ui.support.pages.SuccessPage;
 import org.openqa.selenium.WebDriver;
 import com.ui.runner.UiRunner;
 
@@ -11,6 +12,7 @@ import com.ui.runner.UiRunner;
 public class ExampleUiSteps {
     private WebDriver driver;
     private HtmlElementsPage elementsPage;
+    private SuccessPage successPage;
 
     public ExampleUiSteps() {
         driver = UiRunner.driver;
@@ -28,6 +30,6 @@ public class ExampleUiSteps {
 
     @Then("I receive a success message")
     public void validateSuccessMessage() {
-
+    successPage.assertSuccessMessageIsVisible();
     }
 }

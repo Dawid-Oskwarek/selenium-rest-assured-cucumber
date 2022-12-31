@@ -65,8 +65,9 @@
         <version>3.0.0-M7</version>
         <configuration>
           <includes>
-            <include>**/CucumberRunnerTest*.java</include>
-        </includes>
+            <include>com.api.runner.ApiRunner</include>
+            <include>com.ui.runner.UiRunner</include>
+          </includes>
         </configuration>
       </plugin>               
       </plugins>
