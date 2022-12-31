@@ -1,6 +1,5 @@
 package com.ui.support.pages;
 
-import com.ui.runner.UiRunner;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,7 +14,7 @@ public class SuccessPage {
     private WebElement message;
 
     public SuccessPage(WebDriver driver) {
-        this.driver = UiRunner.driver;
+        this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
