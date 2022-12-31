@@ -6,8 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Chrome
-        run: chrome --version
+      - uses: browser-actions/setup-chrome@latest
+        with:
+          chrome-version: 108.0.5359.71
       - name: Set executable permission on chromedriver
         run: chmod +x src/test/resources/ui/drivers/chromedriver
       - name: Test
