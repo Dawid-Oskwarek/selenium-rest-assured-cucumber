@@ -18,7 +18,8 @@ public class UiRunner extends AbstractTestNGCucumberTests {
     public void setUpClass() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/ui/drivers/chromedriver");
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless"); // open Browser in maximized mode
+        options.addArguments("--headless");
+        options.addArguments("--disable-web-security");
         driver = new ChromeDriver(options);
     }
 
