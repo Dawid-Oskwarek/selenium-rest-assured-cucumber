@@ -20,7 +20,7 @@ public class ExampleUiSteps {
 
     @Given("I access the website")
     public void accessWebsite() {
-        driver.get("https://ultimateqa.com/simple-html-elements-for-automation/");
+        this.driver.get("https://ultimateqa.com/simple-html-elements-for-automation/");
     }
 
     @When("I click on class button")
