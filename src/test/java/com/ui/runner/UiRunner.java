@@ -20,6 +20,7 @@ public class UiRunner extends AbstractTestNGCucumberTests {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
         options.addArguments("--disable-web-security");
+        options.addArguments("--disable-gpu");
         driver = new ChromeDriver(options);
     }
 
