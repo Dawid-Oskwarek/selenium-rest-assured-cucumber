@@ -10,7 +10,7 @@ import static org.testng.Assert.assertTrue;
 public class SuccessPage {
     private WebDriver driver;
 
-    @FindBy(css = "text=Button success")
+    @FindBy(xpath="//*[text()='Button success']")
     private WebElement message;
 
     public SuccessPage(WebDriver driver) {

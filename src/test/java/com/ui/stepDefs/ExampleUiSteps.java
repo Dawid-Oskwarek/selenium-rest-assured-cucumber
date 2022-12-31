@@ -14,24 +14,25 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class ExampleUiSteps {
     public static WebDriver driver;
+    private HtmlElementsPage elementsPage;
+    private SuccessPage successPage;
+
 
     @Before
     public void setup() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/ui/drivers/chromedriverwindows.exe");
         ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--headless");
+        options.addArguments("--headless");
         options.addArguments("--disable-web-security");
         options.addArguments("--disable-gpu");
         driver = new ChromeDriver(options);
     }
 
+
     @After
     public void cleanup() {
         driver.quit();
     }
-
-    HtmlElementsPage elementsPage = new HtmlElementsPage(driver);
-    SuccessPage successPage = new SuccessPage(driver);
 
     @Given("I access the website")
     public void accessWebsite() {
@@ -40,11 +41,13 @@ public class ExampleUiSteps {
 
     @When("I click on class button")
     public void clickOnClassButton()  {
+        elementsPage = new HtmlElementsPage(driver);
         elementsPage.clickButton();
     }
 
     @Then("I receive a success message")
     public void validateSuccessMessage() {
-    successPage.assertSuccessMessageIsVisible();
+        successPage = new SuccessPage(driver);
+        successPage.assertSuccessMessageIsVisible();
     }
 }

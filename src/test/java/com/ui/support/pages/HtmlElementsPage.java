@@ -9,7 +9,7 @@ public class HtmlElementsPage {
     private WebDriver driver;
 
     @FindBy(className="buttonClass")
-    WebElement button;
+    private WebElement button;
 
     public HtmlElementsPage(WebDriver driver) {
         this.driver = driver;
