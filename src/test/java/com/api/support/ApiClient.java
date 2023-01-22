@@ -17,7 +17,9 @@ public class ApiClient {
     }
 
     public Response post(String path, String body) {
-        return requestSpec.body(body).post(path);
+        Response response = requestSpec.body(body).post(path);
+        logResponse(response);
+        return response;
     }
 
     public Response put(String path, String body) {
@@ -51,5 +53,11 @@ public class ApiClient {
     public ApiClient setFormParam(String key, String value) {
         requestSpec.formParam(key, value);
         return this;
+    }
+
+    public void logResponse(Response response) {
+        System.out.println("Response: ");
+        System.out.println("STATUS: " + response.statusCode());
+        System.out.println(response.asString());
     }
 }
