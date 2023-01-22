@@ -13,7 +13,9 @@ public class ApiClient {
     }
 
     public Response get(String path) {
-        return requestSpec.get(path);
+        Response response = requestSpec.get(path);
+        logResponse(response);
+        return response;
     }
 
     public Response post(String path, String body) {
@@ -23,11 +25,15 @@ public class ApiClient {
     }
 
     public Response put(String path, String body) {
-        return requestSpec.body(body).put(path);
+        Response response = requestSpec.body(body).put(path);
+        logResponse(response);
+        return response;
     }
 
     public Response delete(String path) {
-        return requestSpec.delete(path);
+        Response response = requestSpec.delete(path);
+        logResponse(response);
+        return response;
     }
 
     public ApiClient setHeader(String key, String value) {
